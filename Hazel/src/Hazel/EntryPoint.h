@@ -7,8 +7,10 @@ extern Hazel::Application* Hazel::CreateApplication();
 int main(int argc, char** argv)
 {
 	Hazel::Log::Init();
-	Hazel::Log::GetCoreLogger()->warn("Initialized Core Log!");
-	Hazel::Log::GetClientLogger()->info("Hello Client!");
+	HZ_CORE_WARN("Initialized Core Log!");
+
+	int a = 5;
+	HZ_INFO("Hello Client! Var={0}", a);
 
 	auto app = Hazel::CreateApplication();
 	app->Run();
